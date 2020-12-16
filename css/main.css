@@ -1,0 +1,159 @@
+:root {
+  --colour-grey-light: hsl(0, 0%, 93.3%);
+  --colour-pink-medium: hsl(318, 58.3%, 47.1%);
+  --colour-blue-medium: hsl(202.3, 58.3%, 47.1%);
+  --card-unit-height: 24px;
+  --logo-radius: 32px;
+  --event-unit-height: calc(1rem * 12);
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url("/fonts/Inter-roman.var.woff2?v=3.15") format("woff2");
+}
+
+@font-face {
+font-family: 'Inter var';
+font-weight: 100 900;
+font-display: swap;
+font-style: italic;
+font-named-instance: 'Italic';
+src: url("/fonts/Inter-italic.var.woff2?v=3.15") format("woff2");
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+      font-family: 'Inter var', sans-serif;
+  }
+}
+
+body {
+  background: var(--colour-grey-light);
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.screen-reader {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+a {
+  color: #070707;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  /* list-style: none; */
+}
+
+li {
+  margin: 0;
+}
+
+.site-header {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-areas: "logo nav";
+  grid-template-columns: calc(2 * var(--logo-radius)) auto;
+  padding: 16px;
+}
+
+.site-nav a {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .25rem;
+}
+
+.site-nav a:not(:last-of-type) {
+  margin-right: 8px;
+}
+
+.site-name {
+  background: #070707;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  flex: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: .5rem 1rem;
+}
+
+.site-logo {
+  color: var(--colour-pink-medium);
+  display: inline-block;
+  height: calc(2* var(--logo-radius));
+  width: calc(2 * var(--logo-radius));
+}
+
+.site-nav a {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .25rem;
+}
+
+.site-nav a:not(:last-of-type) {
+  margin-right: 8px;
+}
+
+.site-body {
+  margin: 0 1rem;
+}
+
+.site-footer {
+  border-top: 2px solid black;
+  margin: 3rem 1rem 1rem;
+}
+
+.post {
+  margin: 16px;
+  max-width: 580px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.heading-2 {
+  font-size: 1.25rem;
+  margin: 2.5rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .post {
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+}
