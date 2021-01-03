@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a href="{{ '/' | url }}">
+      <a href="/">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="site-logo">
           <title>{{ metadata.title }}</title>
           <circle cx="50" cy="50" r="50" fill="currentColor"/>
@@ -19,7 +19,7 @@
       </a>
       <nav class="site-nav">
         <a href="/charts">Charts</a>
-        <a href="/blog">Blog</a>
+        <a href="{{ '/' | url }}">Blog</a>
         <a href="/about">About</a>
       </nav>
     </header>
