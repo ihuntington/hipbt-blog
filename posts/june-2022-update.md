@@ -1,4 +1,10 @@
-# June 2022 update
+---
+title: June 2022 update
+description: A short summary of changes to Have I Played Bowie Today from the last 18 months
+date: 2022-06-22
+tags: [development, notes]
+layout: layouts/post.njk
+---
 
 After writing the previous blog post I more or less forgot about this site. I focussed my attention on other things such as buying a house with [Fingers McGee](https://www.haveiplayedbowie.today/u/fingersmcgee/diary) and discovering the joys and frustrations of gardening. I did make a few small changes which I will write about in more detail another time, however, the following is a short summary of those changes.
 
