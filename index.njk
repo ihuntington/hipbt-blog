@@ -5,11 +5,6 @@ eleventyNavigation:
   order: 1
 ---
 
-<div class="blog-home">
-  {% set maxPosts = collections.posts.length | min(3) %}
-  <h1>Blog</h1>
-
-  {% set postslist = collections.posts | head(-3) %}
-  {% set postslistCounter = collections.posts | length %}
-  {% include "postslist.njk" %}
-</div>
+{% set postslist = collections.posts | head(-10) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.njk" %}
