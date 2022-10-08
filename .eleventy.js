@@ -5,11 +5,36 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const fetch = require("node-fetch");
+const qs = require("query-string");
+
+async function getTopArtists(username) {
+  const query = {
+    username,
+    date: "2022-01-01",
+    period: "year",
+    limit: 10,
+  };
+
+  return fetch(`http://localhost:3030/charts/artists?${qs.stringify(query)}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      return {
+        items: data.items,
+      };
+    });
+}
+
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+
+  eleventyConfig.addNunjucksAsyncShortcode("artists", async function (options) {
+    return await getTopArtists(options.username);
+  });
 
   eleventyConfig.setDataDeepMerge(true);
 
