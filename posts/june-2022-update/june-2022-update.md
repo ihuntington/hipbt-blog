@@ -1,8 +1,10 @@
 ---
+title: June 2022 update
+description: A short summary of changes to Have I Played Bowie Today from the last 18 months
+date: 2022-06-22
+tags: [development, notes]
 layout: layouts/post.njk
 templateEngineOverride: njk, md
-title: 2021 in summary
-date: Created
 ---
 
 {%- from 'macros/charts/artists.njk' import ArtistChart %}

@@ -88,37 +88,4 @@ module.exports = async function () {
       fingers,
     },
   };
-
-  // const [ian, fingers] = await Promise.all([
-  //   getTopArtists("ian"),
-  //   getTopArtists("fingersmcgee"),
-  // ]);
-  // const artistsIds = [...ian.items, ...fingers.items].map((item) => {
-  //   return item.spotify_id;
-  // });
-  // const spotify = new Spotify();
-  // const data = await spotify.getArtists(artistsIds);
-  // const artists = data.artists.reduce((prev, curr) => {
-  //   return {
-  //     ...prev,
-  //     [curr.id]: curr,
-  //   };
-  // }, {});
-
-  // return {
-  //   users: {
-  //     ian: {
-  //       artists: ian.items.map((item) => ({
-  //         ...item,
-  //         images: artists[item.spotify_id].images,
-  //       })),
-  //     },
-  //     fingers: {
-  //       artists: fingers.items.map((item) => ({
-  //         ...item,
-  //         images: artists[item.spotify_id].images,
-  //       })),
-  //     },
-  //   },
-  // };
 };
