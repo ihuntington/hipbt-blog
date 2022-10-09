@@ -36,5 +36,8 @@
   "dependencies": {
     "@11ty/eleventy-fetch": "^3.0.0",
     "query-string": "^7.1.1"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
