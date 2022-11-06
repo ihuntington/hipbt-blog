@@ -14,6 +14,9 @@
   --color-zinc-700: #3f3f46;
   --color-zinc-900: #18181b;
 
+  --color-fuschia-50: #fdf4ff;
+  --color-fuschia-100: #fae8ff;
+
   --colour-grey-light: hsl(0, 0%, 93.3%);
   --colour-pink-medium: hsl(318, 58.3%, 47.1%);
   --colour-blue-medium: hsl(202.3, 58.3%, 47.1%);
@@ -22,7 +25,7 @@
   --logo-radius: 32px;
   --event-unit-height: calc(1rem * 12);
 
-  --background-color: var(--colour-grey-light);
+  --background-color: var(--color-fuschia-50);
   --body-color: var(--color-zinc-900);
   --body-size: 1.125rem;
   --header-size: 2.25rem;
