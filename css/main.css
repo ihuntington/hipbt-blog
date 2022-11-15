@@ -177,7 +177,7 @@ p > code {
 
 .post {
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 }
 
 .post + .post {
@@ -243,13 +243,8 @@ p > code {
 
 .charts__container {
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
-}
-
-.charts :is(ul, ol) {
-  margin-block-end: 0;
-  padding-inline-start: unset;
 }
 
 .charts > h2 {
@@ -260,19 +255,20 @@ p > code {
 
 table {
   border-collapse: collapse;
+  line-height: 1;
   width: 100%;
-}
-
-table thead th {
-  border-bottom: 1px solid hsl(0, 0%, 2.7%);
-  font-weight: 600;
 }
 
 table th,
 table td {
-  padding: .5rem 0;
+  padding: .5rem;
   text-align: left;
   vertical-align: top;
+}
+
+table thead th {
+  border-bottom: 1px solid hsl(0, 0%, 2.7%);
+  font-weight: normal;
 }
 
 .chart {
@@ -281,21 +277,39 @@ table td {
   border-radius: .5rem;
 }
 
+.chart__title {
+  color: var(--title-color);
+  margin-block-end: 1rem;
+}
+
 .chart__table {
   border-spacing: 0px;
+}
+
+.chart__table :is(th, td) {
+  color: var(--chart-color);
 }
 
 .chart__table thead :is(th, td) {
   border-bottom-color: var(--chart-color);
   border-block-end-width: 2px;
-  color: var(--chart-color);
-  padding: 1rem;
+  padding: 1rem .5rem;
 }
 
-.chart__table tbody :is(th, td) {
-  color: var(--chart-color);
-  line-height: 1;
-  padding: .5rem 1rem;
+.chart__table tbody td {
+  padding-block: 1rem;
+}
+
+.chart__table tbody tr:not(:last-child) td {
+  padding-block-end: 0;
+}
+
+.chart__table tbody td:first-child {
+  padding-inline-end: 0;
+}
+
+.chart__table tbody td:last-child {
+  padding-inline-end: .5rem;
 }
 
 .chart__cell--count {
@@ -309,8 +323,9 @@ table td {
 .chart img {
   aspect-ratio: 1;
   border-radius: .5rem;
+  height: auto;
   object-fit: cover;
-  width: 4rem;
+  width: 3rem;
 }
 
 .artist {
@@ -322,17 +337,27 @@ table td {
 .chart-card {
   align-items: center;
   display: inline-flex;
-  column-gap: 1rem;
+  column-gap: .5rem;
+}
+
+.chart-card__image img {
+  display: block;
 }
 
 .chart-card__content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
-.chart-card__artists {
+.chart-card__track {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chart-card :is(ul, ol) {
   margin: 0;
+  padding-inline-start: unset;
 }
 
 .chart-card__artist {

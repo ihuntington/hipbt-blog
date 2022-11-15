@@ -1,43 +1,46 @@
 {%- macro TrackChart(data) -%}
-    <div class="chart">
-      <table class="chart__table">
-        <thead>
-          <tr>
-            <th>Tracks</th>
-            <th class="chart__cell--count chart__cell--end">Listens</th>
-          </tr>
-        </thead>
-        <tbody>
-      {%- for item in data %}
-          <tr>
-            <td>
-              <div class="chart-card">
-                <div class="chart-card__image">
-                  <img src="{{item.images[2].url}}" width="64" height="64" alt="Photo of {{item.name}}" />
-                </div>
-                <div class="chart-card__content">
-                  <div class="chart-card__primary-text">
-                    <a href="/tracks/{{item.id}}">
-                      <div class="ellipsis-one-line">{{item.name}}</div>
-                    </a>
+    <div class="chart__container">
+      <h3 class="chart__title">Tracks</h3>
+      <div class="chart">
+        <table class="chart__table">
+          <thead>
+            <tr>
+              <th>Tracks</th>
+              <th class="chart__cell--count chart__cell--end">Plays</th>
+            </tr>
+          </thead>
+          <tbody>
+        {%- for item in data %}
+            <tr>
+              <td>
+                <div class="chart-card">
+                  <div class="chart-card__image">
+                    <img src="{{item.images[2].url}}" width="64" height="64" alt="Photo of {{item.name}}" />
                   </div>
-                  <ul class="chart-card__artists ellipsis-one-line">
-                  {%- for artist in item.artists %}
-                  <li class="chart-card__artist">
-                    <a href="/artists/{{artist.id}}">{{artist.name}}</a>
-                    {%- if loop.index < loop.length %},{% endif %}
-                  </li>
-                  {%- endfor %}
-                  </ul>
+                  <div class="chart-card__content">
+                    <div class="chart-card__track">
+                      <a href="/tracks/{{item.id}}">
+                        <div class="ellipsis-one-line">{{item.name}}</div>
+                      </a>
+                    </div>
+                    <ul class="chart-card__artists ellipsis-one-line">
+                    {%- for artist in item.artists %}
+                    <li class="chart-card__artist">
+                      <a href="/artists/{{artist.id}}">{{artist.name}}</a>
+                      {%- if loop.index < loop.length %},{% endif %}
+                    </li>
+                    {%- endfor %}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="chart__cell--count chart__cell--end">
-              <span>{{item.total}}</span>
-            </td>
-          </tr>
-      {%- endfor %}
-        </tbody>
-      </table>
+              </td>
+              <td class="chart__cell--count chart__cell--end">
+                <span>{{item.total}}</span>
+              </td>
+            </tr>
+        {%- endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
 {%- endmacro -%}

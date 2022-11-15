@@ -1,33 +1,36 @@
 {%- macro ArtistChart(data) -%}
-<div class="chart">
-  <table class="chart__table">
-    <thead>
-      <tr>
-        <th>Artists</th>
-        <th class="chart__cell--count chart__cell--end">Listens</th>
-      </tr>
-    </thead>
-    <tbody>
-  {%- for item in data %}
-      <tr>
-        <td>
-          <div class="chart-card">
-            <div class="chart-card__image">
-              <img src="{{item.images[2].url}}" width="64" height="64" alt="Photo of {{item.name}}" />
+<div class="chart__container">
+  <h3 class="chart__title">Artists</h3>
+  <div class="chart">
+    <table class="chart__table">
+      <thead>
+        <tr>
+          <th>Artists</th>
+          <th class="chart__cell--count chart__cell--end">Plays</th>
+        </tr>
+      </thead>
+      <tbody>
+    {%- for item in data %}
+        <tr>
+          <td>
+            <div class="chart-card">
+              <div class="chart-card__image">
+                <img src="{{item.images[2].url}}" width="64" height="64" alt="Photo of {{item.name}}" />
+              </div>
+              <div class="chart-card__content">
+                <a href="/artists/{{item.id}}">
+                  <div class="ellipsis-one-line">{{item.name}}</div>
+                </a>
+              </div>
             </div>
-            <div class="chart-card__content">
-              <a href="/artists/{{item.id}}">
-                <div class="ellipsis-one-line">{{item.name}}</div>
-              </a>
-            </div>
-          </div>
-        </td>
-        <td class="chart__cell--count chart__cell--end">
-          <span>{{item.total}}</span>
-        </td>
-      </tr>
-  {%- endfor %}
-    </tbody>
-  </table>
+          </td>
+          <td class="chart__cell--count chart__cell--end">
+            <span>{{item.total}}</span>
+          </td>
+        </tr>
+    {%- endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 {%- endmacro -%}
